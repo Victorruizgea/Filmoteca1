@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">Filmoteca1</string>
+    <string name="button">Get support</string>
+    <string name="button2">Go to website</string>
+    <string name="button3">Return</string>
+    <string name="textView">Created by Victor Ruiz Gea</string>
+</resources>

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name" translatable="false">Filmoteca1</string>
+    <string name="button">Obtener soporte</string>
+    <string name="button2">Ir al sitio web</string>
+    <string name="button3">Volver</string>
+    <string name="textView">Creada por Victor Ruiz Gea</string>
+</resources>
