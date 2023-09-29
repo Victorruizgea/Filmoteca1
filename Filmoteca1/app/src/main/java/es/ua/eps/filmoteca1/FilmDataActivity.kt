@@ -10,9 +10,13 @@ class FilmDataActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding= ActivityFilmDataBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        val nombre = intent.getStringExtra("EXTRA_FILM_TITLE")
+        binding.textViewData.text = "Datos de la $nombre"
         binding.botonRelacionada.setOnClickListener {
-            startActivity(Intent(this,FilmDataActivity::class.java))
+            val filmRelacionadaIntent = Intent(this, FilmDataActivity::class.java)
+            filmRelacionadaIntent.putExtra("EXTRA_FILM_TITLE","pelicula relacionada")
+
+            startActivity(filmRelacionadaIntent)
         }
 
         binding.botonEditar.setOnClickListener {

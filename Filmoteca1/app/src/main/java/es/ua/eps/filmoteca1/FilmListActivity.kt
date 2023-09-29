@@ -10,19 +10,21 @@ class FilmListActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding= ActivityFilmListBinding.inflate(layoutInflater)
+        binding = ActivityFilmListBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val dataFilmIntent= Intent(this,FilmDataActivity::class.java)
+        val dataFilmIntent = Intent(this, FilmDataActivity::class.java)
 
         binding.peliculaA.setOnClickListener {
+            dataFilmIntent.putExtra("EXTRA_FILM_TITLE", "pelicula A")
             startActivity(dataFilmIntent);
         }
         binding.peliculaB.setOnClickListener {
+            dataFilmIntent.putExtra("EXTRA_FILM_TITLE", "pelicula B")
             startActivity(dataFilmIntent);
         }
         binding.acerca.setOnClickListener {
-            startActivity(Intent(this,AboutActivity::class.java))
+            startActivity(Intent(this, AboutActivity::class.java))
         }
     }
 }
