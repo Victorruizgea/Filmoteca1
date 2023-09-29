@@ -1,16 +1,33 @@
 package es.ua.eps.filmoteca1
 
+import android.app.Activity
+import android.app.Instrumentation
 import android.content.Intent
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.widget.Toast
+import androidx.activity.result.ActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
 import es.ua.eps.filmoteca1.databinding.ActivityFilmDataBinding
 class FilmDataActivity : AppCompatActivity() {
     private lateinit var binding: ActivityFilmDataBinding
+    val MOVIE_RESULT=0;
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding= ActivityFilmDataBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         val nombre = intent.getStringExtra("EXTRA_FILM_TITLE")
+
+        val startForResult =
+            registerForActivityResult(
+                ActivityResultContracts.StartActivityForResult()) { result: ActivityResult ->
+
+                onActivityResult(MOVIE_RESULT, result.resultCode, result.data)
+            }
+
         binding.textViewData.text = "Datos de la $nombre"
         binding.botonRelacionada.setOnClickListener {
             val filmRelacionadaIntent = Intent(this, FilmDataActivity::class.java)
@@ -20,7 +37,15 @@ class FilmDataActivity : AppCompatActivity() {
         }
 
         binding.botonEditar.setOnClickListener {
-            startActivity(Intent(this,FilmEditActivity::class.java))
+            val intent = Intent(this@FilmDataActivity, FilmEditActivity::class.java)
+            if(Build.VERSION.SDK_INT >= 30) {
+                startForResult.launch(intent)
+            }
+            else {
+                @Suppress("DEPRECATION")
+                startActivityForResult(intent, MOVIE_RESULT)
+            }
+
         }
         binding.volver.setOnClickListener {
             val volverIntent=Intent(this,FilmListActivity::class.java)
@@ -29,4 +54,20 @@ class FilmDataActivity : AppCompatActivity() {
             startActivity(volverIntent)
         }
     }
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        @Suppress("DEPRECATION")
+        super.onActivityResult(requestCode, resultCode, data)
+        Log.i("KKK", "onActivityResult: requestCode=${requestCode}, resultCode=${resultCode}")
+        if(requestCode==MOVIE_RESULT) {//valor que devuelve el intent
+            if(resultCode== Activity.RESULT_OK){ //valor que devuelve el result de la otra activity
+                Toast.makeText(this, "RESULT OK", Toast.LENGTH_LONG).show()
+
+            }else{
+                Toast.makeText(this, "RESULT CANCELLED", Toast.LENGTH_LONG).show()
+
+            }
+        }
+    }
+
+
 }
