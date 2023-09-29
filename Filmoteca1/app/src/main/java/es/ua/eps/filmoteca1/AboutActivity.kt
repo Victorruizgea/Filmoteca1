@@ -1,5 +1,7 @@
 package es.ua.eps.filmoteca1
 
+import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -13,13 +15,20 @@ class AboutActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.button.setOnClickListener {
-            Toast.makeText(this, "Funcionalidad sin implementar", Toast.LENGTH_LONG).show();
+            val supportIntent=Intent(Intent.ACTION_SENDTO,Uri.parse("mailto:victorruizgea@gmail.com"))
+            if(supportIntent.resolveActivity(packageManager)!=null){
+                startActivity(supportIntent)
+            }
+
         }
         binding.button2.setOnClickListener {
-            Toast.makeText(this, "Funcionalidad sin implementar", Toast.LENGTH_LONG).show();
+            val webIntent = Intent(Intent.ACTION_VIEW, Uri.parse("http://www.google.com"))
+            if (webIntent.resolveActivity(packageManager) != null) { //para comprobar si encuentra alguna actividad que cumpla con la funcion
+                startActivity(webIntent)
+            }
         }
         binding.button3.setOnClickListener {
-            Toast.makeText(this, "Funcionalidad sin implementar", Toast.LENGTH_LONG).show();
+            finish()
         }
 
     }
