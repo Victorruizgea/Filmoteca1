@@ -1,58 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FilmDataActivity">
+    android:padding="16dp">
+
+    <!-- Imagen -->
+
+    <!-- TextView 1 -->
+    <ImageView
+        android:id="@+id/cartelPelicula"
+        android:layout_width="150dp"
+        android:layout_height="150dp" />
 
     <TextView
-        android:id="@+id/textViewData"
+        android:id="@+id/nombrePelicula"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="144dp"
-        android:layout_marginTop="82dp"
-        android:layout_marginEnd="145dp"
-        android:text="Datos de la pelicula"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="16dp"
+        android:text="" />
+
+    <!-- TextView 2 -->
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/nombrePelicula"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="8dp"
+        android:text="Director:" />
+
+    <!-- TextView 3 -->
+    <TextView
+        android:id="@+id/textoAnio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/directorPelicula"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="8dp"
+        android:text="Año:" />
+
+    <TextView
+        android:id="@+id/directorPelicula"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:layout_below="@id/textView2"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="8dp" />
+
+    <TextView
+        android:id="@+id/anioPelicula"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textoAnio"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="8dp"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/generoPelicula"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ass"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="8dp"
+        android:layout_below="@id/anioPelicula" />
+
+    <TextView
+        android:id="@+id/formatoPelicula"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/generoPelicula"
+        android:layout_marginTop="8dp"
+        android:layout_below="@id/anioPelicula"
+        android:text="asddd" />
 
     <Button
-        android:id="@+id/botonRelacionada"
+        android:id="@+id/imdb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="153dp"
-        android:layout_marginTop="228dp"
-        android:layout_marginEnd="168dp"
-        android:text="Ver pelicula relacionada"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/botonEditar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="137dp"
-        android:layout_marginEnd="136dp"
-        android:layout_marginBottom="292dp"
-        android:text="Editar pelicula"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_below="@id/formatoPelicula"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="8dp"
+        android:text="VER EN IMDB" />
 
     <Button
         android:id="@+id/volver"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="96dp"
-        android:layout_marginEnd="96dp"
-        android:layout_marginBottom="149dp"
-        android:text="Volver a la pagina principal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_below="@id/imdb"
+        android:layout_marginTop="30dp"
+        android:text="Volver al principal" />
+
+    <Button
+        android:id="@+id/editarPelicula"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imdb"
+
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="30dp"
+
+        android:layout_toRightOf="@+id/volver"
+        android:text="Editar pelicula" />
+
+</RelativeLayout>
