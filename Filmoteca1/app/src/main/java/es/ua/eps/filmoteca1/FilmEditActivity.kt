@@ -13,11 +13,11 @@ class FilmEditActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding=ActivityFilmEditBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        binding.botonGuardar.setOnClickListener {
+        binding.guardarBoton.setOnClickListener {
             setResult(Activity.RESULT_OK, Intent() )
             finish()
         }
-        binding.botonCancelar.setOnClickListener {
+        binding.cancelarBoton.setOnClickListener {
             setResult(Activity.RESULT_CANCELED, Intent())
             finish()
         }

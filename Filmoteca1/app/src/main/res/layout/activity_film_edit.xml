@@ -56,7 +56,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="350dp"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
 
@@ -65,16 +65,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="text"
-            android:hint="Título de la película" />
+            android:hint="Título de la película"
+            android:inputType="text" />
 
         <EditText
             android:id="@+id/editTextText2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="text"
-            android:hint="Nombre del director" />
+            android:hint="Nombre del director"
+            android:inputType="text" />
 
         <EditText
             android:id="@+id/editTextNumber"
@@ -89,23 +89,66 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="text"
-            android:hint="Enlace a IMDB" />
-
+            android:hint="Enlace a IMDB"
+            android:inputType="text" />
 
 
         <Spinner
             android:id="@+id/spinner"
             android:layout_width="match_parent"
-            android:prompt="Sci-Fi"
+            android:layout_height="wrap_content"
             android:entries="@array/opciones"
-            android:layout_height="wrap_content" />
+            android:prompt="Sci-Fi" />
+
         <Spinner
             android:id="@+id/spinner2"
             android:layout_width="match_parent"
-            android:prompt="DVD"
+            android:layout_height="wrap_content"
             android:entries="@array/opciones2"
-            android:layout_height="wrap_content" />
+            android:prompt="DVD" />
+
+        <EditText
+            android:id="@+id/comentariosEdit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Comentarios" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/cancelarBoton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Cancelar"
+                android:textSize="20dp"
+                style="@style/Widget.AppCompat.Button.Small"
+                ></Button>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/guardarBoton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="GUARDAR"
+                android:textSize="20dp"
+                style="@style/Widget.AppCompat.Button.Small"
+                ></Button>
+        </LinearLayout>
+
+
+
+
+
     </LinearLayout>
 
 
