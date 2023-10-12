@@ -20,7 +20,6 @@ class FilmDataActivity : AppCompatActivity() {
         binding= ActivityFilmDataBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val nombre = intent.getStringExtra("EXTRA_FILM_TITLE")
 
         val startForResult =
             registerForActivityResult(
@@ -28,15 +27,36 @@ class FilmDataActivity : AppCompatActivity() {
 
                 onActivityResult(MOVIE_RESULT, result.resultCode, result.data)
             }
+        val pos=intent.getIntExtra("pos",0)
 
-        binding.nombrePelicula.text = "$nombre"
+        binding.nombrePelicula.text = FilmDataSource.films.get(pos).title
+        binding.anioPelicula.text= FilmDataSource.films.get(pos).year.toString()
+        binding.cartelPelicula.setImageResource(FilmDataSource.films.get(pos).imageResId)
+        binding.directorPelicula.text=FilmDataSource.films.get(pos).director
+        when(FilmDataSource.films.get(pos).format){
+            Film.FORMAT_BLURAY-> binding.formatoPelicula.text= "FORMAT_BLURAY"
+            Film.FORMAT_DIGITAL -> binding.formatoPelicula.text="FORMAT_DIGITAL"
+            Film.FORMAT_DVD -> binding.formatoPelicula.text="FORMAT_DVD"
+        }
+        when(FilmDataSource.films.get(pos).genre){
+            Film.GENRE_ACTION-> binding.generoPelicula.text= "GENRE_ACTION"
+            Film.GENRE_SCIFI->  binding.generoPelicula.text="GENRE_SCIFI"
+            Film.GENRE_COMEDY -> binding.generoPelicula.text="GENRE_COMEDY"
+            Film.GENRE_DRAMA -> binding.generoPelicula.text="GENRE_DRAMA"
+            Film.GENRE_HORROR ->binding.generoPelicula.text="GENRE_HORROR"
+        }
+
+
+
+
         binding.imdb.setOnClickListener {
-            val filmRelacionadaIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.imdb.com/title/$nombre"))
+            val filmRelacionadaIntent = Intent(Intent.ACTION_VIEW, Uri.parse(binding.imdb.text as String?))
             startActivity(filmRelacionadaIntent)
         }
 
         binding.editarPelicula.setOnClickListener {
             val intent = Intent(this@FilmDataActivity, FilmEditActivity::class.java)
+            intent.putExtra("pos",pos)
             if(Build.VERSION.SDK_INT >= 30) {
                 startForResult.launch(intent)
             }
@@ -47,11 +67,12 @@ class FilmDataActivity : AppCompatActivity() {
 
         }
         binding.volver.setOnClickListener {
-            val volverIntent=Intent(this,FilmListActivity::class.java)
+            val volverIntent=Intent(this,ListActivity::class.java)
             volverIntent.flags = Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS
 
             startActivity(volverIntent)
         }
+
     }
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         @Suppress("DEPRECATION")

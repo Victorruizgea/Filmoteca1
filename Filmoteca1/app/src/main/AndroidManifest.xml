@@ -2,6 +2,16 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <queries>
 
         <!-- Browser -->
@@ -9,6 +19,9 @@
             <action android:name="android.intent.action.VIEW" />
 
             <data android:scheme="http" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.CAMERA_BUTTON" />
         </intent>
 
         <!-- E-mail -->
@@ -30,6 +43,9 @@
         android:theme="@style/Theme.Filmoteca1"
         tools:targetApi="31">
         <activity
+            android:name="ListActivity"
+            android:exported="false" />
+        <activity
             android:name=".FilmEditActivity"
             android:exported="false" />
         <activity
@@ -39,7 +55,7 @@
             android:name=".AboutActivity"
             android:exported="false" />
         <activity
-            android:name=".FilmListActivity"
+            android:name=".RecyclerListActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
