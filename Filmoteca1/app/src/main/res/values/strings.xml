@@ -4,4 +4,6 @@
     <string name="button2">Ir al sitio web</string>
     <string name="button3">Volver</string>
     <string name="textView">Creada por Victor Ruiz Gea</string>
+    <string name="spinner1" translatable="false">DVD</string>
+    <string name="spinner2" translatable="false">Sci-Fi</string>
 </resources>
