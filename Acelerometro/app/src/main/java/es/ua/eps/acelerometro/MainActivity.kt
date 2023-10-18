@@ -12,6 +12,7 @@ import android.widget.TextView
 class MainActivity : AppCompatActivity(),SensorEventListener {
 
     private var sensor: Sensor? = null
+    private lateinit var sensorManager: SensorManager
     private lateinit var txt_X: TextView
     private lateinit var txt_Y:TextView
     private lateinit var txt_Z:TextView
@@ -20,11 +21,12 @@ class MainActivity : AppCompatActivity(),SensorEventListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val sensorManager = getSystemService(Context.SENSOR_SERVICE) as SensorManager
+        sensorManager = getSystemService(Context.SENSOR_SERVICE) as SensorManager
         sensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER)
         txt_X=findViewById(R.id.posX)
         txt_Y=findViewById(R.id.posY)
         txt_Z=findViewById(R.id.posZ)
+
 
 
     }
