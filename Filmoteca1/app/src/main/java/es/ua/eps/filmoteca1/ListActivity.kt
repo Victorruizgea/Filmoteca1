@@ -2,14 +2,14 @@ package es.ua.eps.filmoteca1
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.ArrayAdapter
+import android.view.Menu
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import es.ua.eps.filmoteca1.databinding.ActivityListBinding
 
 
 class ListActivity : AppCompatActivity() {
     private lateinit var binding: ActivityListBinding
-
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,6 +30,10 @@ class ListActivity : AppCompatActivity() {
 
         }
     }
+
+
+
+
 }
 
 

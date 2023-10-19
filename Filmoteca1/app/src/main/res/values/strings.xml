@@ -6,4 +6,6 @@
     <string name="textView">Creada por Victor Ruiz Gea</string>
     <string name="spinner1" translatable="false">DVD</string>
     <string name="spinner2" translatable="false">Sci-Fi</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
