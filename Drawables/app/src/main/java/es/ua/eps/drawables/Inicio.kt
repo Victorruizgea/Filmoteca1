@@ -14,5 +14,6 @@ class Inicio : AppCompatActivity() {
 
         binding.ejDrawables.setOnClickListener { startActivity(Intent(this,Drawables::class.java)) }
         binding.ejComponentes.setOnClickListener{startActivity(Intent(this,Componentes::class.java))}
+        binding.notificaciones.setOnClickListener{startActivity(Intent(this,Notificaciones::class.java))}
     }
 }

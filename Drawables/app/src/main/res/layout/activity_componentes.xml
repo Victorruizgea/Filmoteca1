@@ -8,13 +8,42 @@
 
 
     <es.ua.eps.drawables.TextViewCitas
+        android:id="@+id/textViewCitas"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="65dp"
         android:hint="Texto"
-        android:textAlignment="center"
         android:minHeight="48dp"
+        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <es.ua.eps.drawables.EdicionBorrable
+        android:id="@+id/editBor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="88dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewCitas" />
+
+    <es.ua.eps.drawables.GraficaView
+        android:id="@+id/graficaView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="145dp"
+        android:layout_marginBottom="284dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:percentage="60" />
+
+    <SeekBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="121dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/graficaView"
+       android:max="100"
+        android:id="@+id/seekBar"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
