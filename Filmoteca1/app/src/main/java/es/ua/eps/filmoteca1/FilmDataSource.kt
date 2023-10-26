@@ -1,7 +1,7 @@
 package es.ua.eps.filmoteca1
 
 object FilmDataSource {
-    val films: MutableList<Film> = mutableListOf<Film>()
+    val films: MutableList<Film> = mutableListOf()
 
     init {
         var f = Film()

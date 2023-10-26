@@ -4,7 +4,10 @@ import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
 import android.widget.Toast
+import androidx.appcompat.widget.Toolbar
+import androidx.core.app.NavUtils
 import es.ua.eps.filmoteca1.databinding.ActivityAboutBinding
 
 class AboutActivity : AppCompatActivity() {
@@ -31,5 +34,16 @@ class AboutActivity : AppCompatActivity() {
             finish()
         }
 
+
     }
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        val id: Int = item.getItemId()
+        if (id == android.R.id.home) { // ID especial para botón "home"
+            NavUtils.navigateUpTo(this,
+                Intent(this, ListActivity::class.java))
+            return true
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
 }

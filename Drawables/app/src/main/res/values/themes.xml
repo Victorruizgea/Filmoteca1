@@ -1,9 +1,23 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.Drawables" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:windowBackground">@color/color_fondo</item>
+        <!-- Color de texto por defecto -->
+        <item name="android:textColor">@color/color_texto</item>
+        <!-- Fuente del texto -->
+        <item name="android:typeface">serif</item>
+
     </style>
 
     <style name="Theme.Drawables" parent="Base.Theme.Drawables" />
+
+    <!-- Estilo personalizado para títulos -->
+    <style name="EstiloTitulo" parent="@android:style/TextAppearance.Large" />
+
+    <!-- Estilo personalizado para botones -->
+    <style name="EstiloBoton">
+        <item name="android:background">@drawable/fondo_boton</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:gravity">center</item>
+    </style>
 </resources>

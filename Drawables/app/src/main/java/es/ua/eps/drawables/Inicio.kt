@@ -15,5 +15,11 @@ class Inicio : AppCompatActivity() {
         binding.ejDrawables.setOnClickListener { startActivity(Intent(this,Drawables::class.java)) }
         binding.ejComponentes.setOnClickListener{startActivity(Intent(this,Componentes::class.java))}
         binding.notificaciones.setOnClickListener{startActivity(Intent(this,Notificaciones::class.java))}
+        binding.pantallaTactil.setOnClickListener { startActivity(Intent(this,PantallaTactil::class.java)) }
+        binding.estilosBoton.setOnClickListener { startActivity(Intent(this,Estilos1::class.java)) }
+        binding.hilosThread.setOnClickListener { startActivity(Intent(this,HilosThread::class.java)) }
+        binding.hilosCorrutinas.setOnClickListener { startActivity(Intent(this,HilosCorrutinas::class.java)) }
+        binding.hilosAsyntask.setOnClickListener { startActivity(Intent(this,HilosAsynTask::class.java)) }
+
     }
 }

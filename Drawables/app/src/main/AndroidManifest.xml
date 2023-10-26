@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -11,8 +12,26 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Drawables"
+        android:theme="@style/AppTheme"
         tools:targetApi="31">
+        <activity
+            android:name=".HilosCorrutinas"
+            android:exported="false" />
+        <activity
+            android:name=".HilosAsynTask"
+            android:exported="false" />
+        <activity
+            android:name=".HilosThread"
+            android:exported="false" />
+        <activity
+            android:name=".Estilos2"
+            android:exported="false" />
+        <activity
+            android:name=".Estilos1"
+            android:exported="false" />
+        <activity
+            android:name=".PantallaTactil"
+            android:exported="false" />
         <activity
             android:name=".BarraEstado"
             android:exported="false" />
@@ -20,7 +39,7 @@
             android:name=".SnackActivity"
             android:exported="false" />
         <activity
-            android:name=".Inicio"
+            android:name=".Notificaciones"
             android:exported="false" />
         <activity
             android:name=".Componentes"
@@ -29,7 +48,7 @@
             android:name=".Drawables"
             android:exported="false" />
         <activity
-            android:name=".Notificaciones"
+            android:name=".Inicio"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

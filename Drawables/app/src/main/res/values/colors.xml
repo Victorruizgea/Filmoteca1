@@ -6,4 +6,6 @@
     <color name="green">#00FF00</color>
     <color name="blue">#0000FF</color>
     <color name="grey">#535353</color>
+    <color name="color_fondo">#CDCDCD</color>
+    <color name="color_texto">#000080</color>
 </resources>
