@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "es.ua.eps.sharedpreferences2_1"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "es.ua.eps.sharedpreferences2_1"
