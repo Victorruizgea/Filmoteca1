@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">SharedPreferences2</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="basic_format">Basic Format\n</string>
+    <string name="advanced_format">Advanced Format</string>
+    <string name="fg_size_title">Size</string>
+    <string name="fg_color_title">FG color</string>
+    <string name="bg_color_title">BG color\n</string>
+    <string name="bold_title">Bold</string>
+    <string name="italic_title">Italic</string>
+</resources>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<SeekBarPreference
+    android:key="alpha_preference"
+    android:title="Alpha"
+    android:defaultValue="0"
+    android:max="10"
+    android:min="0"
+
+    />
+
+    <SeekBarPreference
+        android:key="rotation_preference"
+        android:title="Rotation"
+        android:defaultValue="0"
+        android:max="360"
+        android:min="0"/>
+</PreferenceScreen>
