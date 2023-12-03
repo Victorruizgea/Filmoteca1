@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <PreferenceCategory
+        android:title="Basic"
+        android:key="basic_category">
+        <ListPreference
+            android:entries="@array/size_entries"
+            android:key="pref_fg_color"
+            android:title="@string/fg_size_title"
+            app:entryValues="@array/size_entries"
+            app:useSimpleSummaryProvider="true" />
+
+        <ListPreference
+            android:entries="@array/color_entries"
+            android:key="pref_fg_color"
+            android:title="@string/fg_color_title"
+            app:entryValues="@array/color_values"
+            app:useSimpleSummaryProvider="true" />
+        <ListPreference
+            android:entries="@array/color_entries"
+            android:key="pref_bg_color"
+            android:title="@string/bg_color_title"
+            app:entryValues="@array/color_values"
+            app:useSimpleSummaryProvider="true" />
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="pref_bold"
+            android:title="@string/bold_title" />
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="pref_bold"
+            android:title="@string/italic_title" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="Advanced"
+        android:key="advanced_category">
+        <SeekBarPreference
+            android:key="alpha_preference"
+            android:title="Alpha"
+            android:defaultValue="0"
+            android:max="10"
+            android:min="0"
+
+            />
+
+        <SeekBarPreference
+            android:key="rotation_preference"
+            android:title="Rotation"
+            android:defaultValue="0"
+            android:max="360"
+            android:min="0"/>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
